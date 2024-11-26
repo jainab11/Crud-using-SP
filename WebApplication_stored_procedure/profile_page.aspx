@@ -37,10 +37,10 @@
                 <div class="col-md-4">
                     <div class="profile-card text-center">
                         <asp:Image ID="imgProfile" runat="server" CssClass="profile-pic" ImageUrl="~/Handler1.ashx?id=<%=userId %>" />
-                        <h3><asp:Label runat="server" id="lblName" Text="User Name"></asp:Label></h3>
-                        <p><asp:Label runat="server" ID="lblEmail" Text="Email ID"></asp:Label></p>
-                        <p><asp:Label runat="server" ID="lblMobile" Text="Mobile"></asp:Label></p>
-                        <p><asp:Label runat="server" ID="lblGender" Text="Gender"></asp:Label></p>
+                        <h3><asp:Label runat="server" id="lblName" Text="User Name"> Name: </asp:Label></h3>
+                        <p><asp:Label runat="server" ID="lblEmail" Text="Email ID">Email</asp:Label></p>
+                        <p><asp:Label runat="server" ID="lblMobile" Text="Mobile">Mobile</asp:Label></p>
+                        <p><asp:Label runat="server" ID="lblGender" Text="Gender">Gender</asp:Label></p>
                     </div>
                 </div>
             </div>

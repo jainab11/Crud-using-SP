@@ -268,7 +268,7 @@
 
 
 <%--Another login code--%>
-j<%-- <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="WebApplication_stored_procedure.WebForm2" %>
+<%-- <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="WebApplication_stored_procedure.WebForm2" %>
 
 
 <!DOCTYPE html>

@@ -1,0 +1,211 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\user\\source\\repos\\WebApplication_stored_procedure\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{80372438-7E58-4F71-84C8-D91E4EF49BB6}|WebApplication_stored_procedure\\WebApplication_stored_procedure.csproj|C:\\Users\\user\\source\\repos\\WebApplication_stored_procedure\\webapplication_stored_procedure\\admindatabase.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80372438-7E58-4F71-84C8-D91E4EF49BB6}|WebApplication_stored_procedure\\WebApplication_stored_procedure.csproj|solutionrelative:webapplication_stored_procedure\\admindatabase.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80372438-7E58-4F71-84C8-D91E4EF49BB6}|WebApplication_stored_procedure\\WebApplication_stored_procedure.csproj|C:\\Users\\user\\source\\repos\\WebApplication_stored_procedure\\webapplication_stored_procedure\\admindatabase.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{80372438-7E58-4F71-84C8-D91E4EF49BB6}|WebApplication_stored_procedure\\WebApplication_stored_procedure.csproj|solutionrelative:webapplication_stored_procedure\\admindatabase.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80372438-7E58-4F71-84C8-D91E4EF49BB6}|WebApplication_stored_procedure\\WebApplication_stored_procedure.csproj|C:\\Users\\user\\source\\repos\\WebApplication_stored_procedure\\webapplication_stored_procedure\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{80372438-7E58-4F71-84C8-D91E4EF49BB6}|WebApplication_stored_procedure\\WebApplication_stored_procedure.csproj|solutionrelative:webapplication_stored_procedure\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80372438-7E58-4F71-84C8-D91E4EF49BB6}|WebApplication_stored_procedure\\WebApplication_stored_procedure.csproj|c:\\users\\user\\source\\repos\\webapplication_stored_procedure\\webapplication_stored_procedure\\registration.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{80372438-7E58-4F71-84C8-D91E4EF49BB6}|WebApplication_stored_procedure\\WebApplication_stored_procedure.csproj|solutionrelative:webapplication_stored_procedure\\registration.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80372438-7E58-4F71-84C8-D91E4EF49BB6}|WebApplication_stored_procedure\\WebApplication_stored_procedure.csproj|C:\\Users\\user\\source\\repos\\WebApplication_stored_procedure\\webapplication_stored_procedure\\profile_page.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80372438-7E58-4F71-84C8-D91E4EF49BB6}|WebApplication_stored_procedure\\WebApplication_stored_procedure.csproj|solutionrelative:webapplication_stored_procedure\\profile_page.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80372438-7E58-4F71-84C8-D91E4EF49BB6}|WebApplication_stored_procedure\\WebApplication_stored_procedure.csproj|C:\\Users\\user\\source\\repos\\WebApplication_stored_procedure\\webapplication_stored_procedure\\profile_page.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{80372438-7E58-4F71-84C8-D91E4EF49BB6}|WebApplication_stored_procedure\\WebApplication_stored_procedure.csproj|solutionrelative:webapplication_stored_procedure\\profile_page.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80372438-7E58-4F71-84C8-D91E4EF49BB6}|WebApplication_stored_procedure\\WebApplication_stored_procedure.csproj|C:\\Users\\user\\source\\repos\\WebApplication_stored_procedure\\webapplication_stored_procedure\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80372438-7E58-4F71-84C8-D91E4EF49BB6}|WebApplication_stored_procedure\\WebApplication_stored_procedure.csproj|solutionrelative:webapplication_stored_procedure\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80372438-7E58-4F71-84C8-D91E4EF49BB6}|WebApplication_stored_procedure\\WebApplication_stored_procedure.csproj|C:\\Users\\user\\source\\repos\\WebApplication_stored_procedure\\webapplication_stored_procedure\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{80372438-7E58-4F71-84C8-D91E4EF49BB6}|WebApplication_stored_procedure\\WebApplication_stored_procedure.csproj|solutionrelative:webapplication_stored_procedure\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80372438-7E58-4F71-84C8-D91E4EF49BB6}|WebApplication_stored_procedure\\WebApplication_stored_procedure.csproj|C:\\Users\\user\\source\\repos\\WebApplication_stored_procedure\\webapplication_stored_procedure\\registration.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80372438-7E58-4F71-84C8-D91E4EF49BB6}|WebApplication_stored_procedure\\WebApplication_stored_procedure.csproj|solutionrelative:webapplication_stored_procedure\\registration.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80372438-7E58-4F71-84C8-D91E4EF49BB6}|WebApplication_stored_procedure\\WebApplication_stored_procedure.csproj|C:\\Users\\user\\source\\repos\\WebApplication_stored_procedure\\webapplication_stored_procedure\\userdatabase.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80372438-7E58-4F71-84C8-D91E4EF49BB6}|WebApplication_stored_procedure\\WebApplication_stored_procedure.csproj|solutionrelative:webapplication_stored_procedure\\userdatabase.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80372438-7E58-4F71-84C8-D91E4EF49BB6}|WebApplication_stored_procedure\\WebApplication_stored_procedure.csproj|C:\\Users\\user\\source\\repos\\WebApplication_stored_procedure\\webapplication_stored_procedure\\userdatabase.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{80372438-7E58-4F71-84C8-D91E4EF49BB6}|WebApplication_stored_procedure\\WebApplication_stored_procedure.csproj|solutionrelative:webapplication_stored_procedure\\userdatabase.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AdminDatabase.aspx",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\WebApplication_stored_procedure\\WebApplication_stored_procedure\\AdminDatabase.aspx",
+              "RelativeDocumentMoniker": "WebApplication_stored_procedure\\AdminDatabase.aspx",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\WebApplication_stored_procedure\\WebApplication_stored_procedure\\AdminDatabase.aspx",
+              "RelativeToolTip": "WebApplication_stored_procedure\\AdminDatabase.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-10-16T04:22:40.884Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Login.aspx",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\WebApplication_stored_procedure\\WebApplication_stored_procedure\\Login.aspx",
+              "RelativeDocumentMoniker": "WebApplication_stored_procedure\\Login.aspx",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\WebApplication_stored_procedure\\WebApplication_stored_procedure\\Login.aspx",
+              "RelativeToolTip": "WebApplication_stored_procedure\\Login.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-10-16T10:02:02.134Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "profile_page.aspx",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\WebApplication_stored_procedure\\WebApplication_stored_procedure\\profile_page.aspx",
+              "RelativeDocumentMoniker": "WebApplication_stored_procedure\\profile_page.aspx",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\WebApplication_stored_procedure\\WebApplication_stored_procedure\\profile_page.aspx",
+              "RelativeToolTip": "WebApplication_stored_procedure\\profile_page.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-10-17T05:39:28.722Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "profile_page.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\WebApplication_stored_procedure\\WebApplication_stored_procedure\\profile_page.aspx.cs",
+              "RelativeDocumentMoniker": "WebApplication_stored_procedure\\profile_page.aspx.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\WebApplication_stored_procedure\\WebApplication_stored_procedure\\profile_page.aspx.cs",
+              "RelativeToolTip": "WebApplication_stored_procedure\\profile_page.aspx.cs",
+              "ViewState": "AgIAAI8AAAAAAAAAAAAmwLkAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-17T04:10:58.935Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AdminDatabase.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\WebApplication_stored_procedure\\WebApplication_stored_procedure\\AdminDatabase.aspx.cs",
+              "RelativeDocumentMoniker": "WebApplication_stored_procedure\\AdminDatabase.aspx.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\WebApplication_stored_procedure\\WebApplication_stored_procedure\\AdminDatabase.aspx.cs",
+              "RelativeToolTip": "WebApplication_stored_procedure\\AdminDatabase.aspx.cs",
+              "ViewState": "AgIAAKwAAAAAAAAAAAAcwHEAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T10:59:03.767Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Registration.aspx",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\WebApplication_stored_procedure\\WebApplication_stored_procedure\\Registration.aspx",
+              "RelativeDocumentMoniker": "WebApplication_stored_procedure\\Registration.aspx",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\WebApplication_stored_procedure\\WebApplication_stored_procedure\\Registration.aspx",
+              "RelativeToolTip": "WebApplication_stored_procedure\\Registration.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-10-16T09:57:39.794Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Login.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\WebApplication_stored_procedure\\WebApplication_stored_procedure\\Login.aspx.cs",
+              "RelativeDocumentMoniker": "WebApplication_stored_procedure\\Login.aspx.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\WebApplication_stored_procedure\\WebApplication_stored_procedure\\Login.aspx.cs",
+              "RelativeToolTip": "WebApplication_stored_procedure\\Login.aspx.cs",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAawJkAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T10:01:36.118Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Web.config",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\WebApplication_stored_procedure\\WebApplication_stored_procedure\\Web.config",
+              "RelativeDocumentMoniker": "WebApplication_stored_procedure\\Web.config",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\WebApplication_stored_procedure\\WebApplication_stored_procedure\\Web.config",
+              "RelativeToolTip": "WebApplication_stored_procedure\\Web.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAB1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-10-23T06:50:24.581Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Registration.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\WebApplication_stored_procedure\\WebApplication_stored_procedure\\Registration.aspx.cs",
+              "RelativeDocumentMoniker": "WebApplication_stored_procedure\\Registration.aspx.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\WebApplication_stored_procedure\\WebApplication_stored_procedure\\Registration.aspx.cs",
+              "RelativeToolTip": "WebApplication_stored_procedure\\Registration.aspx.cs",
+              "ViewState": "AgIAAG0AAAAAAAAAAAAEwH4AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-21T05:29:12.967Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "UserDatabase.aspx",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\WebApplication_stored_procedure\\WebApplication_stored_procedure\\UserDatabase.aspx",
+              "RelativeDocumentMoniker": "WebApplication_stored_procedure\\UserDatabase.aspx",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\WebApplication_stored_procedure\\WebApplication_stored_procedure\\UserDatabase.aspx",
+              "RelativeToolTip": "WebApplication_stored_procedure\\UserDatabase.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-10-17T05:43:38.988Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UserDatabase.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\WebApplication_stored_procedure\\WebApplication_stored_procedure\\UserDatabase.aspx.cs",
+              "RelativeDocumentMoniker": "WebApplication_stored_procedure\\UserDatabase.aspx.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\WebApplication_stored_procedure\\WebApplication_stored_procedure\\UserDatabase.aspx.cs",
+              "RelativeToolTip": "WebApplication_stored_procedure\\UserDatabase.aspx.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABoAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-17T05:44:08.321Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

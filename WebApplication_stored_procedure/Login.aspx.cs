@@ -44,8 +44,6 @@ namespace WebApplication_stored_procedure
                 }
             }
         }
-        
-
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             string plainpass = TxtPass.Text;

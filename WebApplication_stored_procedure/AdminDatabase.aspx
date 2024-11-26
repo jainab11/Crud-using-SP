@@ -77,12 +77,13 @@
         </div>
         <div class="container-fluid col-md-12">
             <%--<h2 class="text-center">Admin Database</h2>--%>
-            <asp:GridView runat="server" ID="gvspdb2" ></asp:GridView>
+            <asp:GridView runat="server" ID="gvspdb2"></asp:GridView>
             <asp:GridView ID="gvspdb" runat="server" AutoGenerateColumns="False" CssClass="table table-stripped"
                 OnRowDeleting="gvspdb_RowDeleting" OnRowEditing="gvspdb_RowEditing" OnRowCancelingEdit="gvspdb_RowCancelingEdit"
-                OnRowUpdating="gvspdb_RowUpdating" DataKeyNames="ID" OnRowCommand="gvspdb_RowCommand" ShowFooter="True" RowStyle-BackColor="#A1DCF2" AlternatingRowStyle-BackColor="White" HeaderStyle-BackColor="#3AC0F2" OnRowDataBound="gvspdb_RowDataBound" Width="100%">
+                OnRowUpdating="gvspdb_RowUpdating" DataKeyNames="ID" OnRowCommand="gvspdb_RowCommand" ShowFooter="False" RowStyle-BackColor="#A1DCF2" AlternatingRowStyle-BackColor="White" HeaderStyle-BackColor="#3AC0F2" OnRowDataBound="gvspdb_RowDataBound" Width="100%">
                 <Columns>
                     <asp:BoundField DataField="ID" HeaderText="ID" />
+
 
                     <asp:TemplateField HeaderText="Name">
                         <ItemTemplate>
@@ -139,7 +140,7 @@
                             <asp:Label runat="server" Text='<%# Eval("GENDER") %>'></asp:Label>
                         </ItemTemplate>
                         <EditItemTemplate>
-                            <asp:DropDownList runat="server" ID="ddlGenderEdit" CssClass="form-control">
+                              <asp:DropDownList runat="server" ID="ddlGenderEdit" CssClass="form-control" SelectedValue='<%# Bind("GENDER") %>'>
                                 <asp:ListItem Text="Male" Value="Male"></asp:ListItem>
                                 <asp:ListItem Text="Female" Value="Female"></asp:ListItem>
                             </asp:DropDownList>
@@ -157,7 +158,7 @@
                             <asp:Label runat="server" Text='<%# Eval("USERTYPE") %>'></asp:Label>
                         </ItemTemplate>
                         <EditItemTemplate>
-                            <asp:DropDownList runat="server" ID="ddlUserTypeEdit" CssClass="form-control">
+                             <asp:DropDownList runat="server" ID="ddlUserTypeEdit" SelectedValue='<%# Bind("USERTYPE") %>' CssClass="form-control">
                                 <asp:ListItem Text="Admin" Value="Admin"></asp:ListItem>
                                 <asp:ListItem Text="User" Value="User"></asp:ListItem>
 
@@ -185,8 +186,19 @@
 
 
                         </EditItemTemplate>
+
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="PDF">
+                        <ItemTemplate>
+                            <asp:HyperLink ID="hlPdf" runat="server" NavigateUrl='<%# Eval("PDF_PATH") %>' Text="View PDF" Target="_blank"
+                                Visible='<%# !string.IsNullOrEmpty(Eval("PDF_PATH").ToString()) %>'></asp:HyperLink>
+                        </ItemTemplate>
+                        <EditItemTemplate>
+                            <asp:FileUpload runat="server" ID="pdfupload" CssClass="form-control" Accept=".pdf" />
+                            <asp:HiddenField ID="hfPdfPath" runat="server" Value='<%# Eval("PDF_PATH") %>' />
+                        </EditItemTemplate>
                         <FooterTemplate>
-                            <asp:FileUpload runat="server" ID="txtImageFooter" CssClass="form-control" />
+                            <asp:FileUpload runat="server" ID="PdfUploadFooter" CssClass="form-control" Accept=".pdf" />
                         </FooterTemplate>
                     </asp:TemplateField>
 

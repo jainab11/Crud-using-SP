@@ -110,7 +110,8 @@ namespace WebApplication_stored_procedure
                         string decryptedPassword = Decrypt(encryptedPassword);
                         row["PASSWORD"] = decryptedPassword;
                     }
-
+                    DataView dv = dt.DefaultView;
+                    dv.RowFilter = "USERTYPE='User'";
                     gvspdb.DataSource = dt;
                     gvspdb.DataBind();
                 }
@@ -172,6 +173,90 @@ namespace WebApplication_stored_procedure
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+        //protected void gvspdb_RowCommand(object sender, GridViewCommandEventArgs e)
+        //{
+        //    if (e.CommandName == "Insert")
+        //    {
+        //        GridViewRow footerRow = gvspdb.FooterRow;
+        //        string name = (footerRow.FindControl("txtNameFooter") as System.Web.UI.WebControls.TextBox).Text;
+        //        string email = (footerRow.FindControl("txtEmailFooter") as System.Web.UI.WebControls.TextBox).Text;
+        //        string password = (footerRow.FindControl("txtPasswordFooter") as System.Web.UI.WebControls.TextBox).Text;
+        //        string mobile = (footerRow.FindControl("txtMobileFooter") as System.Web.UI.WebControls.TextBox).Text;
+        //        string gender = (footerRow.FindControl("ddlGenderFooter") as DropDownList).SelectedValue;
+        //        string usertype = (footerRow.FindControl("ddlUserTypeFooter") as DropDownList).SelectedValue;
+        //        FileUpload fuImage = footerRow.FindControl("txtImageFooter") as FileUpload;
+        //        byte[] imgData = null;
+        //        if (fuImage.HasFile)
+        //        {
+        //            string fileExtension = Path.GetExtension(fuImage.FileName).ToLower();
+        //            if (fileExtension == ".jpg" || fileExtension == ".png")
+        //            {
+        //                if (fuImage.PostedFile.ContentLength <= 1048576)
+        //                {
+
+        //                    using (BinaryReader br = new BinaryReader(fuImage.PostedFile.InputStream))
+        //                    {
+        //                        imgData = br.ReadBytes(fuImage.PostedFile.ContentLength);
+
+        //                    }
+        //                }
+        //                else
+        //                {
+        //                    ScriptManager.RegisterStartupScript(this, GetType(), "FileSizeError", "alert('File size must be less than 1MB');", true);
+        //                    return;
+        //                }
+        //            }
+        //            else
+        //            {
+        //                // Invalid file type
+        //                ScriptManager.RegisterStartupScript(this, GetType(), "FileTypeError", "alert('Only .jpg, .jpeg, or .png files are allowed');", true);
+        //                return;
+        //            }
+        //        }
+        //        try
+        //        {
+        //            using (SqlConnection con = new SqlConnection(cs))
+        //            {
+        //                using (SqlCommand cmd = new SqlCommand("SP_MANAGE_USERS", con))
+        //                {
+        //                    cmd.CommandType = CommandType.StoredProcedure;
+        //                    cmd.Parameters.AddWithValue("@ACTION", "CREATE");
+        //                    cmd.Parameters.AddWithValue("@NAME", name);
+        //                    cmd.Parameters.AddWithValue("@EMAIL", email);
+        //                    cmd.Parameters.AddWithValue("@PASSWORD", Encrypt(password));
+        //                    cmd.Parameters.AddWithValue("@MOBILE", mobile);
+        //                    cmd.Parameters.AddWithValue("@GENDER", gender);
+        //                    cmd.Parameters.AddWithValue("@USERTYPE", usertype);
+        //                    //cmd.Parameters.AddWithValue("@IMG", imgPath);
+
+        //                    cmd.Parameters.AddWithValue("@IMG", imgData ?? (object)DBNull.Value);
+
+        //                    con.Open();
+        //                    int result = cmd.ExecuteNonQuery();
+        //                    if (result > 0)
+        //                    {
+        //                        Response.Write("<script>alert('Data inserted successfully');</script>");
+        //                        gvspdb.EditIndex = -1;
+        //                        Response.Redirect(Request.RawUrl, false);
+        //                    }
+        //                    else
+        //                    {
+        //                        Response.Write("<script>alert('Insert failed');</script>");
+        //                    }
+        //                    con.Close();
+        //                }
+        //            }
+        //            this.BindGridView();
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            string script = $"alert('Error: {ex.Message}')";
+        //            ScriptManager.RegisterStartupScript(this, GetType(), "ErrorAlert", script, true);
+        //        }
+        //    }
+
+        //}
+
         protected void gvspdb_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             if (e.CommandName == "Insert")
@@ -184,7 +269,26 @@ namespace WebApplication_stored_procedure
                 string gender = (footerRow.FindControl("ddlGenderFooter") as DropDownList).SelectedValue;
                 string usertype = (footerRow.FindControl("ddlUserTypeFooter") as DropDownList).SelectedValue;
                 FileUpload fuImage = footerRow.FindControl("txtImageFooter") as FileUpload;
+                FileUpload fileUploadPdf = footerRow.FindControl("PdfUploadFooter") as FileUpload;
                 byte[] imgData = null;
+                //for upload pdf
+                string pdfPath = null;
+                if (fileUploadPdf.HasFile)
+                {
+                    string pdfExtension = Path.GetExtension(fileUploadPdf.FileName).ToLower();
+                    if (pdfExtension == ".pdf")
+                    {
+                        string filename = Path.GetFileName(fileUploadPdf.FileName);
+                        string filepath = Server.MapPath("~/fileupload/") + filename;
+                        fileUploadPdf.SaveAs(filepath);
+                        pdfPath = "~/fileupload/" + filename;
+                    }
+                    else
+                    {
+                        ScriptManager.RegisterStartupScript(this, GetType(), "PdfFileTypeError", "alert('Only PDF files are allowed');", true);
+                        return;
+                    }
+                }
                 if (fuImage.HasFile)
                 {
                     string fileExtension = Path.GetExtension(fuImage.FileName).ToLower();
@@ -229,6 +333,7 @@ namespace WebApplication_stored_procedure
                             //cmd.Parameters.AddWithValue("@IMG", imgPath);
 
                             cmd.Parameters.AddWithValue("@IMG", imgData ?? (object)DBNull.Value);
+                            cmd.Parameters.AddWithValue("@PDF_PATH", pdfPath ?? (object)DBNull.Value);
 
                             con.Open();
                             int result = cmd.ExecuteNonQuery();
@@ -256,7 +361,6 @@ namespace WebApplication_stored_procedure
 
         }
 
-
         private string getEncryptedPassword(int id)
         {
             string storedpassword = string.Empty;
@@ -272,28 +376,117 @@ namespace WebApplication_stored_procedure
             }
             return storedpassword;
         }
+        //protected void gvspdb_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        //{
+        //    try
+        //    {
+        //        int id = Convert.ToInt32(gvspdb.DataKeys[e.RowIndex].Value);
+        //        string name = (gvspdb.Rows[e.RowIndex].FindControl("name") as System.Web.UI.WebControls.TextBox).Text;
+        //        string email = (gvspdb.Rows[e.RowIndex].FindControl("email") as System.Web.UI.WebControls.TextBox).Text;
+        //        string currentPassword = (gvspdb.Rows[e.RowIndex].FindControl("password") as System.Web.UI.WebControls.TextBox).Text;
+        //        string dbpassword = getEncryptedPassword(id);
+        //        string mobile = (gvspdb.Rows[e.RowIndex].FindControl("mobile") as System.Web.UI.WebControls.TextBox).Text;
+
+        //        // Retrieve selected gender and user type
+        //        string gender = (gvspdb.Rows[e.RowIndex].FindControl("ddlGenderEdit") as DropDownList).SelectedValue;
+        //        string usertype = (gvspdb.Rows[e.RowIndex].FindControl("ddlUserTypeEdit") as DropDownList).SelectedValue;
+
+        //        // Retrieve file upload control and hidden field
+        //        FileUpload fuImage = gvspdb.Rows[e.RowIndex].FindControl("fuImage") as FileUpload;
+        //        HiddenField hfImagePath = gvspdb.Rows[e.RowIndex].FindControl("hfImagePath") as HiddenField;
+
+        //        byte[] imgData = null;
+        //        if (fuImage.HasFile)
+        //        {
+        //            using (BinaryReader br = new BinaryReader(fuImage.PostedFile.InputStream))
+        //            {
+        //                imgData = br.ReadBytes(fuImage.PostedFile.ContentLength);
+        //            }
+        //        }
+        //        else if (!string.IsNullOrEmpty(hfImagePath.Value))
+        //        {
+        //            imgData = Convert.FromBase64String(hfImagePath.Value);  // Convert the Base64 string back to byte[]
+        //        }
+
+        //        // Add the image parameter
+
+
+
+        //        string existingpassword = getEncryptedPassword(id);
+        //        using (SqlConnection con = new SqlConnection(cs))
+        //        {
+        //            using (SqlCommand cmd = new SqlCommand("SP_MANAGE_USERS", con))
+        //            {
+        //                cmd.CommandType = CommandType.StoredProcedure;
+        //                cmd.Parameters.AddWithValue("@ACTION", "UPDATE");
+        //                cmd.Parameters.AddWithValue("@ID", id);
+        //                cmd.Parameters.AddWithValue("@NAME", name);
+        //                cmd.Parameters.AddWithValue("@EMAIL", email);
+        //                if (currentPassword != dbpassword)
+        //                {
+        //                    cmd.Parameters.AddWithValue("@PASSWORD", Encrypt(currentPassword));
+        //                }
+        //                else
+        //                {
+
+        //                    cmd.Parameters.AddWithValue("@PASSWORD", currentPassword);
+
+        //                }
+
+
+
+        //                cmd.Parameters.AddWithValue("@MOBILE", mobile);
+        //                cmd.Parameters.AddWithValue("@GENDER", gender);
+        //                cmd.Parameters.AddWithValue("@USERTYPE", usertype);
+        //                //if (imgData != null)
+        //                //{
+        //                //    cmd.Parameters.AddWithValue("@IMG", imgData);
+        //                //}
+        //                cmd.Parameters.AddWithValue("@IMG", imgData ?? (object)DBNull.Value);
+
+        //                con.Open();
+        //                cmd.ExecuteNonQuery();
+        //                con.Close();
+        //            }
+        //        }
+
+        //        gvspdb.EditIndex = -1;
+        //        BindGridView();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        string script = $"alert('Error: {ex.Message}');";
+        //        ScriptManager.RegisterStartupScript(this, GetType(), "ErrorAlert", script, true);
+        //    }
+
+        //}
+
         protected void gvspdb_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
             try
             {
                 int id = Convert.ToInt32(gvspdb.DataKeys[e.RowIndex].Value);
+
                 string name = (gvspdb.Rows[e.RowIndex].FindControl("name") as System.Web.UI.WebControls.TextBox).Text;
                 string email = (gvspdb.Rows[e.RowIndex].FindControl("email") as System.Web.UI.WebControls.TextBox).Text;
                 string currentPassword = (gvspdb.Rows[e.RowIndex].FindControl("password") as System.Web.UI.WebControls.TextBox).Text;
-                string dbpassword = getEncryptedPassword(id);
                 string mobile = (gvspdb.Rows[e.RowIndex].FindControl("mobile") as System.Web.UI.WebControls.TextBox).Text;
 
-                // Retrieve selected gender and user type
+                string dbpassword = getEncryptedPassword(id);
+
                 string gender = (gvspdb.Rows[e.RowIndex].FindControl("ddlGenderEdit") as DropDownList).SelectedValue;
                 string usertype = (gvspdb.Rows[e.RowIndex].FindControl("ddlUserTypeEdit") as DropDownList).SelectedValue;
 
-                // Retrieve file upload control and hidden field
                 FileUpload fuImage = gvspdb.Rows[e.RowIndex].FindControl("fuImage") as FileUpload;
                 HiddenField hfImagePath = gvspdb.Rows[e.RowIndex].FindControl("hfImagePath") as HiddenField;
+                FileUpload fuPdf = gvspdb.Rows[e.RowIndex].FindControl("pdfupload") as FileUpload;
+                HiddenField hfPdfPath = gvspdb.Rows[e.RowIndex].FindControl("hfPdfPath") as HiddenField;
 
+                // Handle image upload and retrieval
                 byte[] imgData = null;
                 if (fuImage.HasFile)
                 {
+                    // If a new image is uploaded, read it as binary data
                     using (BinaryReader br = new BinaryReader(fuImage.PostedFile.InputStream))
                     {
                         imgData = br.ReadBytes(fuImage.PostedFile.ContentLength);
@@ -301,44 +494,51 @@ namespace WebApplication_stored_procedure
                 }
                 else if (!string.IsNullOrEmpty(hfImagePath.Value))
                 {
-                    imgData = Convert.FromBase64String(hfImagePath.Value);  // Convert the Base64 string back to byte[]
+                    // If no new image is uploaded, use the previous image (stored in HiddenField as base64 string)
+                    imgData = Convert.FromBase64String(hfImagePath.Value);
                 }
 
-                // Add the image parameter
+                // Handle PDF upload and retrieval
+                string pdfPath = null;
+                if (fuPdf.HasFile)
+                {
+                    string pdfExtension = Path.GetExtension(fuPdf.FileName).ToLower();
+                    if (pdfExtension == ".pdf")
+                    {
+                        // Save the new PDF
+                        string filename = Path.GetFileName(fuPdf.FileName);
+                        string filepath = Server.MapPath("~/fileupload/") + filename;
+                        fuPdf.SaveAs(filepath);
+                        pdfPath = "~/fileupload/" + filename;
+                    }
+                }
+                else if (!string.IsNullOrEmpty(hfPdfPath.Value))
+                {
+                    // If no new PDF is uploaded, use the previous PDF path (stored in HiddenField)
+                    pdfPath = hfPdfPath.Value;
+                }
 
+                // Handle password update
+                string newPassword = currentPassword != dbpassword ? Encrypt(currentPassword) : currentPassword;
 
-
-                string existingpassword = getEncryptedPassword(id);
                 using (SqlConnection con = new SqlConnection(cs))
                 {
                     using (SqlCommand cmd = new SqlCommand("SP_MANAGE_USERS", con))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
+
                         cmd.Parameters.AddWithValue("@ACTION", "UPDATE");
                         cmd.Parameters.AddWithValue("@ID", id);
                         cmd.Parameters.AddWithValue("@NAME", name);
                         cmd.Parameters.AddWithValue("@EMAIL", email);
-                        if (currentPassword != dbpassword)
-                        {
-                            cmd.Parameters.AddWithValue("@PASSWORD", Encrypt(currentPassword));
-                        }
-                        else
-                        {
-
-                            cmd.Parameters.AddWithValue("@PASSWORD", currentPassword);
-
-                        }
-
-
-
+                        cmd.Parameters.AddWithValue("@PASSWORD", newPassword);
                         cmd.Parameters.AddWithValue("@MOBILE", mobile);
                         cmd.Parameters.AddWithValue("@GENDER", gender);
                         cmd.Parameters.AddWithValue("@USERTYPE", usertype);
-                        //if (imgData != null)
-                        //{
-                        //    cmd.Parameters.AddWithValue("@IMG", imgData);
-                        //}
+
+                        // If imgData is null (no new image), send DBNull to avoid overwriting the old image
                         cmd.Parameters.AddWithValue("@IMG", imgData ?? (object)DBNull.Value);
+                        cmd.Parameters.AddWithValue("@PDF_PATH", pdfPath ?? (object)DBNull.Value);  // Same for PDF path
 
                         con.Open();
                         cmd.ExecuteNonQuery();
@@ -346,15 +546,16 @@ namespace WebApplication_stored_procedure
                     }
                 }
 
+                // Reset EditIndex and rebind GridView
                 gvspdb.EditIndex = -1;
                 BindGridView();
             }
             catch (Exception ex)
             {
+                // Handle exceptions and show error message
                 string script = $"alert('Error: {ex.Message}');";
                 ScriptManager.RegisterStartupScript(this, GetType(), "ErrorAlert", script, true);
             }
-
         }
 
         protected void gvspdb_RowDeleting(object sender, GridViewDeleteEventArgs e)

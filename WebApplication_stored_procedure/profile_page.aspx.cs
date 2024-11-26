@@ -119,7 +119,8 @@ namespace WebApplication_stored_procedure
 
         protected void ChangePasswordButton_Click(object sender, EventArgs e)
         {
-            // For Modal Popup
+            
+
             ClientScript.RegisterStartupScript(this.GetType(),"key", "launchModal();", true);
         }
 
